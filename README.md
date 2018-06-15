@@ -14,3 +14,23 @@ if (window.webkit && window.webkit.messageHandlers) {
 }
 ```
 參考網址：https://stackoverflow.com/questions/28795476/detect-if-page-is-loaded-inside-wkwebview-in-javascript
+
+
+#
+# 如何在Javascript 新增 script 到html 去
+#
+
+## 只加上　Code 
+```javascipt
+    var script = document.createElement("script");
+    script.type="text/javascript";
+    script.innerHTML="window.dataLayer = window.dataLayer || [];";
+    document.getElementsByTagName('head')[0].appendChild(script);
+```
+## 只加上 js file link 
+```javascipt
+    var script = document.createElement("script");
+    script.type="text/javascript";
+    script.src="xxxx.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+```
